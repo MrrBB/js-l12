@@ -275,20 +275,20 @@ window.addEventListener('DOMContentLoaded', function() {
 
 		totalValue.innerHTML = 0;
 		people.addEventListener('change', function() {
+			personsSum = Math.floor(+this.value);
+		 	total = personsSum * daysSum * 4000;
 			if(restDays.value == ''){
 				totalValue.innerHTML = 0;
 			} else {				
-				personsSum = Math.floor(+this.value);
-				 	total = (daysSum + personsSum)*4000;
 				 	totalValue.innerHTML = total;
 				 }			
 		})
 		restDays.addEventListener('change', function() {
+			daysSum = Math.floor(+this.value);
+			total = personsSum * daysSum * 4000;
 			if(people.value == ''){
 				totalValue.innerHTML = 0;
 			} else {				 
-				daysSum = Math.floor(+this.value);
-				 	total = (daysSum + personsSum)*4000;
 				 	totalValue.innerHTML = total;
 				 }
 			
